@@ -5,53 +5,62 @@
 {%block content%}
 <style>
     img{
-        width: 200px;
-        height: 250px;
+        width: 510px;
+        height: 400px;
     }
     h1{
-        font-size: 45px;
+        font-size: 40px;
         color: rgb(1, 1, 31);
+        margin-left:90px;
+        margin-top: 50px;
+        margin-bottom: 30px;
 
     }
+   #btn{
+        margin-left:150px;
+           
+    }
     .container-fluid{
-        font-family: 'Merienda', cursive;
+        font-family: 'Pacifico', cursive;
+        
+    }
+    
+    .wrap{
+        width: 800px;
+        height: 500px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-left: 300px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+     
+    }
+    #icon{
+        padding-top: 50px;
     }
 
 
 
 
 </style>
-<head>
-        <link href="https://fonts.googleapis.com/css?family=Merienda|Patrick+Hand&display=swap" rel="stylesheet">
-</head>
+
+
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-7">
-            <img src="https://c3metricssite-c3metrics.netdna-ssl.com/wp-content/uploads/2016/06/instagram.jpg" alt="">
-             <h1>instagram</h1>
-
-        </div>
-        <div class="col-md-5">
-               
-                <div class="panel panel-default">
-        
-                <div class="panel-heading">
-                  <h3 class="text-center">Sign Up</h3>
-                </div>
-                <div class="panel-body">
-        
-                  <form  action="/accounts/register/" method="post">
-                    
-                    <div class="form-group">
-                      <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
-                    </div>
-        
-                    <input type="hidden" name="next" value="{{next}}">
-        
-                  </form>
+        <div class="wrap">
+                <div class="col-md-7" id="icon">
+                        <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fgordonkelly%2Ffiles%2F2017%2F08%2FDIlG3rqXkAAOazn-1.jpg" alt="">
+                       
             
+                    </div>
+                    <div class="col-md-5" id="button">
+                            <h1>Instagram</h1>
+                           
+                            <button type="button" id="btn" class="btn btn-dark btn-lg">Start</button>
+            
+                    </div>
 
         </div>
+       
     </div>
 </div>
 {%endblock%}
