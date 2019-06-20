@@ -3,34 +3,49 @@
 <div class="container">
   <div class="row">
     <!-- Empty div -->
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      {% if form.errors %}
-        <p> Some Information Might be Incorrect </p>
-      {% endif %}
-      <div class="panel panel-default">
-
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="panel panel-default">
+                <div class="col-md-7" id="icon">
+                    <img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fgordonkelly%2Ffiles%2F2017%2F08%2FDIlG3rqXkAAOazn-1.jpg" alt="">
+                   
         
-        <div class="panel-body">
+                </div>
+                <div class="col-md-5" id="button">
+                        <h1>Instagram</h1>
+                    <div class="form">
+                        {% if form.errors %}
+                        <p> Some Information Might be Incorrect </p>
+                        {% endif %}
+                      <div class="panel panel-default">
+                
+                        
+                        <div class="panel-body">
+                
+                          <form  action="/accounts/register/" method="post">
+                            {% csrf_token %}
+                            {% bootstrap_form form layout='inline' %}
+                            <div class="form-group">
+                              <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
+                            </div>
+                
+                            <input type="hidden" name="next" value="{{next}}">
+                
+                          </form>
+                
+                        </div>
+                
+                      </div>
+                    </div>
+        
+                </div>
 
-          <form  action="/accounts/register/" method="post">
-            {% csrf_token %}
-            {% bootstrap_form form layout='inline' %}
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
-            </div>
-
-            <input type="hidden" name="next" value="{{next}}">
-
-          </form>
-
-        </div>
-
-      </div>
+    </div>
+      
 
     </div>
     <!-- empty div -->
-    <div class="col-md-4"></div>
+    <div class="col-md-2"></div>
   </div>
 </div>
 
