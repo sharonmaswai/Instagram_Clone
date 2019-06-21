@@ -1,0 +1,17 @@
+%extends 'base.html'%}
+
+{% block content %}
+{{block.super}}
+<br><br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <img src="{{profile.profile_photo.url}}" alt="bikcha" width="150px" height="150px" class="rounded-circle">
+      </div>
+      <h1>{{profile.username}}</h1>
+      <p>{{profile.bio}}</p>
+    </div>
+  </div>
+
+
+{% endblock %}
