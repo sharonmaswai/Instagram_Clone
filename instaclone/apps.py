@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class InstacloneConfig(AppConfig):
-    name = 'instaclone'
+class BackupConfig(AppConfig):
+    name = 'backup'
