@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Image, Profile
-from .forms import ProfileForm
+from .forms import ProfileForm, PostForm
 @login_required(login_url='/accounts/login/')
 def index(request):
 
@@ -41,5 +41,30 @@ def profile(request):
     posts=Image.objects.filter(profile_id=current_user.id)
     return render(request, 'profile.html',{"profile":profile})
 def home(request):
+    current_user = request.user
+    posts = Image.objects.all()
+    print('-' * 30)
+    for i in posts:
+        print(i.image)
+    # print(posts)
+    # comments = Comment.objects.all()
+    # likes = Likes.objects.all
+    profile = Profile.objects.all()
+    # print(likes)
+    
+    return render(request, 'home.html', {"posts":posts})
 
-    return render (request, 'home.html')
+    
+def new_post(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.profile = current_user
+            post.save()
+        return redirect('home')
+
+    else:
+        form = PostForm()
+    return render(request, 'new-post.html', {"form": form})

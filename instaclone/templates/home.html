@@ -2,5 +2,203 @@
 {% load bootstrap3 %}
  
 {%block content%}
- <h1>Test</h1>
+<style>
+    body{
+        background-color: #f4f4f5;
+        width: 100%;
+        height: 100%;
+    }
+    .card{
+        width: 550px;
+        font-family: 'EB Garamond', serif;
+    }
+.footer-cont {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .footer-cont ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    }
+    .footer-cont ul li {
+        margin-bottom: 8px;
+    }
+
+.footer-cont ul {
+    padding: 0;
+    margin: 0;
+}
+.footer-cont ul li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 16px;
+}
+.footer-cont ul li:last-child {
+    margin-right: 0;
+}
+.footer-cont ul li a {
+    color: #003569;
+}
+.footer-cont span {
+    color: #999;
+}
+.react {
+    margin-top: 4px;
+    position: relative;
+}
+.react a {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.react a:last-child {
+    margin-right: 0
+}
+.react .love {
+    background-image: url(https://goo.gl/NLUdLH);
+    background-position: -408px -156px;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+}
+.react .comment {
+    background-image: url(https://goo.gl/NLUdLH);
+    background-position: -408px -26px;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+}
+.react .save {
+     background-image: url(https://goo.gl/NLUdLH);
+    background-repeat: no-repeat;
+    background-position: -104px -389px;
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+}
+.caption {
+    color: #585858;
+    font-size: 13px;
+    margin: 16px 0;
+}
+.caption a {
+    margin-right: .3em;
+    font-weight: 600;
+}
+.comment-section {
+    position: relative;
+    border-top: 1px solid #efefef;
+    padding: 26px 26px 26px 0;
+    margin-top: 4px;
+    overflow: hidden
+}
+#cmnt {
+    outline: none;
+    overflow-x: scroll;
+    padding: 0;
+    background: none;
+    border: none;
+    color: #262626;
+    width: 100%;
+    height: 18px;
+    max-height: 80px;
+    resize: none;
+}
+
+
+</style>
+<div class="container">
+    {%for post in posts%}
+        <div class="card">
+
+            <!-- Card image -->
+            <div class="view overlay">
+                <a href='https://goo.gl/Y9YWLo' target='_blank'><img src='https://goo.gl/rN1DcT'></a>
+                    
+                <a href='https://goo.gl/Y9YWLo' target='_blank' class='user'>{{user}}
+              <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+          
+            <!-- Card content -->
+            <div class="card-body">
+          
+              <!-- Social shares button -->
+            
+              <!-- Title -->
+              <div class='card-title'>
+                  <div class="react">
+                        <a href='#' role='button'><span class='love'></span></a>
+                        <a href='#' role='button'><span class='comment'></span></a>
+                        <a href='#' role='button'><span class='save'></span></a>
+                        
+
+                  </div>
+                    
+             </div>
+              
+              <hr>
+              <!-- Text -->
+              <p class="card-text" style="font-size: 20px;  color: black">
+                    <a style="font-size: 23px;" href='#'>{{user}}   </a>
+                   {% autoescape on %}
+                    {{post.image_caption| safe}}
+                   {% endautoescape %}
+               </p>
+               <br> <hr> <br>
+              <!-- Link -->
+                <div class='comment-section'>
+                    <input type='text' id='cmnt' placeholder='Add a comment...'>
+                    <span class='dot02'></span>
+                </div>
+             
+            </div>
+          
+        </div>
+
+    
+       
+        
+    {%endfor%} 
+
+    <footer>
+            <div class="footer-cont">
+                <ul>
+                 <li><a href='#'>About us</a></li>
+                 <li><a href='#'>Support</a></li>
+                 <li><a href='#'>Blog</a></li>
+                 <li><a href='#'>Press</a></li>
+                 <li><a href='#'>Jobs</a></li>
+                 <li><a href='#'>Privacy</a></li>
+                 <li><a href='#'>Terms</a></li>
+                 <li><a href='#'>Directory</a></li>
+                 <li><a href='#' onclick='return false;'>Language</a></li>
+                </ul>
+                <span class='copyright'>© 2019 INSTAGRAM</span>
+                </div>
+    </footer>
+
+   
+</body>
+
+
+
+ 
 {%endblock%}
