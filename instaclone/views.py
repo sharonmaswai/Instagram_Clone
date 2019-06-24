@@ -47,12 +47,27 @@ def home(request):
     for i in posts:
         print(i.image)
     # print(posts)
-    # comments = Comment.objects.all()
+    comments = Comment.objects.all()
     # likes = Likes.objects.all
     profile = Profile.objects.all()
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.image = image
+            comment.user_comment = current_user
+            comment.save()
+
+            print(comments)
+
+
+        return redirect(home)
+     else:
+        form = CommentForm()
+
     # print(likes)
     
-    return render(request, 'home.html', {"posts":posts})
+    return render(request, 'home.html', {"posts":posts, 'comments'=comments})
 
     
 def new_post(request):

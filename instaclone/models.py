@@ -22,4 +22,22 @@ class Image(models.Model):
     profile = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     likes = models.CharField(max_length =50)
     comments = models.CharField(max_length =50)
+class Comment(models.Model):
+    image = models.ForeignKey(Image,blank=True, on_delete=models.CASCADE,related_name='comment')
+    user_comment= models.ForeignKey(User, blank=True)
+    comment= models.TextField()
+
+    def save_comment(self):
+        self.save()
+
+    def delete_comment(self):
+        self.delete()
+
+    @classmethod
+    def get_image_comments(cls, id):
+        comments = Comment.objects.filter(image__pk=id)
+        return comments
+
+    def __str__(self):
+        return str(self.comment)
 

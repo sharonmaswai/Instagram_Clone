@@ -10,6 +10,7 @@ urlpatterns=[
     url(r'^new/profile$', views.create_profile, name='create-profile'),
     url(r'^profile/$', views.profile, name='profile'),
     url(r'^home/$', views.home, name='home'),
+    url(r'^comment$', views.comment, name='comment') 
     url(r'^new/post/$', views.new_post, name='new-post')
 ]
 if settings.DEBUG:

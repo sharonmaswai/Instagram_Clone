@@ -165,8 +165,18 @@
                <br> <hr> <br>
               <!-- Link -->
                 <div class='comment-section'>
-                    <input type='text' id='cmnt' placeholder='Add a comment...'>
-                    <span class='dot02'></span>
+                        <form action=" {% url 'comment' image_id=image.id %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% bootstrap_form form layout='inline' %}
+                            <input type="submit" class="btn btn-success btn-lg" value="POST">
+                        </form>
+                    {% for comment in comments %}
+                    {% if comment.image_id == image.id%}
+                    <h5><strong>{{comment.comment_owner}}</strong> {{comment.comment}}</h5>
+                    <hr>
+
+                    {% endif %}
+                    {% endfor %}
                 </div>
              
             </div>
