@@ -40,4 +40,8 @@ class Comment(models.Model):
 
     def __str__(self):
         return str(self.comment)
+class Likes(models.Model):
+    instalikes=models.ForeignKey(User)
+    image =models.ForeignKey(Image)
+
 

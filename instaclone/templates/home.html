@@ -146,7 +146,7 @@
               <div class='card-title'>
                   <div class="react">
                         <a href='#' role='button'><span class='love'></span></a>
-                        <a href='#' role='button'><span class='comment'></span></a>
+                        <a href="{% url 'comment' post.id %}" role='button'><span class='comment'></span></a>
                         <a href='#' role='button'><span class='save'></span></a>
                         
 
@@ -165,18 +165,16 @@
                <br> <hr> <br>
               <!-- Link -->
                 <div class='comment-section'>
-                        <form action=" {% url 'comment' image_id=image.id %}" method="POST" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            {% bootstrap_form form layout='inline' %}
-                            <input type="submit" class="btn btn-success btn-lg" value="POST">
-                        </form>
+                     
                     {% for comment in comments %}
-                    {% if comment.image_id == image.id%}
-                    <h5><strong>{{comment.comment_owner}}</strong> {{comment.comment}}</h5>
+                  
+                    <h5><strong>{{comment.user_comment}}</strong> {{comment.comment}}</h5>
                     <hr>
 
-                    {% endif %}
+                    
                     {% endfor %}
+
+                    
                 </div>
              
             </div>
