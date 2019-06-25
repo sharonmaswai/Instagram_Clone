@@ -42,6 +42,6 @@ class Comment(models.Model):
         return str(self.comment)
 class Instalikes(models.Model):
     instalikes=models.ForeignKey(User)
-    image =models.ForeignKey(Image)
+    post =models.ForeignKey(Image)
 
 

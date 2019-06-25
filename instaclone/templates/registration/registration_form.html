@@ -61,12 +61,12 @@
                             {% csrf_token %}
                             {% bootstrap_form form layout='inline' %}
                             <div class="form-group">
-                              <input type="submit"  class="btn btn-primary btn-sm" value="Sign Up">
+                              <input type="submit"  class="btn btn-secondary btn-sm" value="Sign Up">
                             </div>
                 
                             <input type="hidden" name="next" value="{{next}}">
                             <div class="row" style="border: 1px solid lightgrey; padding:5%; background-color:white;">
-                                <p>Already have an account? <a href="/accounts/login">Login</a></p>
+                                <p>Already have an account? <a href="/accounts/login/">Login</a></p>
                             </div>
                 
                           </form>

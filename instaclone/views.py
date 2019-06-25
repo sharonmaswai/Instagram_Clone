@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Image, Profile, Comment
+from .models import Image, Profile, Comment, Instalikes
 from django.contrib.auth.models import User
 
 
 from .forms import ProfileForm, PostForm, CommentForm
-@login_required(login_url='/accounts/login/')
+
 def index(request):
 
     return render(request, 'display/index.html')
@@ -97,7 +97,7 @@ def comment(request, image_id):
 def likes(request, image_id):
     current_user = request.user
     post=Image.objects.get(id=image_id)
-    like_pic,created= Likes.objects.get_or_create(instalikes=current_user, post=post)
+    like_pic,created= Instalikes.objects.get_or_create(instalikes=current_user, post=post)
     like_pic.save()
 
     return redirect('home')
