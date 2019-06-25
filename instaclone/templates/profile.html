@@ -1,4 +1,4 @@
-{%extends 'base.html'%}
+{%extends 'display/base.html'%}
 
 {% block content %}
 {{block.super}}
@@ -6,19 +6,20 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-12">
-        <img src="{{profile.profile_photo.url}}" alt="bikcha" width="150px" height="150px" class="rounded-circle">
+        <img src="{{profile.profile_photo.url}}" alt="" width="150px" height="150px" class="rounded-circle">
       </div>
       <div class="col-md-6 col-sm-12">
-      <div class="yass">
+      <div class="bio">
         <div class="ok">
           
         </div>
         <div class="button">
-          <a href="#" style="border:1px solid lightgrey;border-radius:2px;color:black;text-decoration:none">Edit profile</a>
+          <a href="{%url 'create-profile'%}" style="border:1px solid lightgrey;border-radius:2px;color:black;text-decoration:none">Edit profile</a>
         </div>
         <div class="cog">
           <i class="fas fa-cog"></i>
         </div>
+        <p>{{profile.name}}</p>
       </div><br><br>
       <h2>Bio</h2>
     {{profile.bio}}
@@ -27,14 +28,19 @@
     <br><hr>
     <div class="row">
       {%for post in posts%}
-        
-          <div class="card" style="width:18rem">
-            <img src="{{post.image.url}}" alt="told ya" width="100%">
-          </div>
-
+      <div class="col-md-4 image-holder ">
+          
+          <img class="display" src="{{post.image.url}}" alt="" style="width: 320px; height: 290px;" > <br>
+         
+      </div>
+     
+      <br>
+      <br>
+     <br> 
 
       {%endfor%}
     </div>
+   
   </div>
 
 

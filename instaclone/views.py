@@ -40,14 +40,14 @@ def create_profile(request):
 def profile(request):
     
     current_user = request.user
-    profile = Profile.objects.get(username=current_user)
+    profile = Profile.objects.get(name=current_user)
     posts=Image.objects.filter(profile_id=current_user.id)
-    return render(request, 'profile.html',{"profile":profile})
+    return render(request, 'profile.html',{"profile":profile, 'posts':posts})
 def home(request):
     current_user = request.user
     posts = Image.objects.all()
     users = Profile.objects.all()
-    print('-' * 30)
+    
     for i in posts:
         print(i.image)
     # print(posts)
