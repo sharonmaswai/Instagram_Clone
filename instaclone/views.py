@@ -46,6 +46,7 @@ def profile(request):
 def home(request):
     current_user = request.user
     posts = Image.objects.all()
+    users = Profile.objects.all()
     print('-' * 30)
     for i in posts:
         print(i.image)
@@ -70,7 +71,7 @@ def home(request):
 
     # print(likes)
     
-    return render(request, 'home.html', {"posts":posts, 'comments':comments})
+    return render(request, 'home.html', {"posts":posts, 'users':users, 'comments':comments})
 def comment(request, image_id):
 
     current_user = request.user

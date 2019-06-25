@@ -6,6 +6,7 @@ class Profile(models.Model):
     user_id = models.IntegerField(default=0)
     profile_photo= models.ImageField(upload_to = 'profiles/', blank = True)
     bio=models.CharField(max_length =50)
+    name = models.CharField(max_length=30, blank=True)
    
     
   

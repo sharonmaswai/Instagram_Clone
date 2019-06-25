@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 urlpatterns=[
     
     url('^$',views.index,name='index'),
-    url(r'^new/profile$', views.create_profile, name='create-profile'),
+    url(r'^new/profile/$', views.create_profile, name='create-profile'),
     url(r'^profile/$', views.profile, name='profile'),
     url(r'^home/$', views.home, name='home'),
     url(r'^comment/(\d+)$', views.comment, name='comment'),
