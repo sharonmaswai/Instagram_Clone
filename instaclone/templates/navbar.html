@@ -1,56 +1,23 @@
- 
-<style>
-  .nav-link{
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{% url 'home'%"> |  INSTAGRAM</a>
 
-    margin-left:30px;
-  }
-.search{
-  margin-left:100px;
-}
-#up{
-  background-color: white;
-}
+      </div>
 
-</style>
-
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;" >
-    <a class="navbar-brand" style="font-family: 'Pacifico', cursive; font-size: 27px;" href="{% url 'index' %}"><i class="fas fa-camera-retro"> <i> | </i></i >  Instagram</a>
-       
-    <div class="search">
-
-    
-            <form class="form-inline my-2 my-lg-0 navbar-form" role="search" action="">
-              <input class="form-control mr-sm-2 search_bar text-center" type="search" placeholder="Search" aria-label="Search" name="image_name">
-              <button class="btn btn-outline-info my-2 my-sm-0" type="submit" style="display:none">Search</button>
-            </form> 
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#insta-dets"
-      aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="insta-dets" style="margin-left: 400px; font-family: 'EB Garamond', serif;">
-      <ul class="navbar-nav mr-auto">
-          {% if user.is_authenticated %}
-        <li class="nav-item active" >
-            <a class="nav-link" id="up" href="{%url 'new-post'%}">      UPLOAD |</a>
-        </li>
-       
-        <li class="nav-item">
-          <a class="nav-link" href="">LOGOUT |</a>
-        </li>
+      <ul class="nav navbar-nav">
+      
+        <li><a href="{% url 'profile'%}">PROFILE |</a></li>
+        <li><a href="{% url 'new-post'%}">UPLOAD  |</a></li>
+        
+        <li><a href="#">LOGOUT |</a></li>
       </ul>
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item avatar">
-          <a class="nav-link p-0" href="{% url 'profile'%}">
-            <img src="https://instagram.fmba3-1.fna.fbcdn.net/vp/9fea5594e8cf78fc8d3985b92c1535fe/5D8B79E9/t51.2885-19/s150x150/56653096_434762827343795_6071080308919238656_n.jpg?_nc_ht=instagram.fmba3-1.fna.fbcdn.net" class="rounded-circle z-depth-0"
-              alt="avatar image" height="35">
-          </a>
-        </li>
-        {%else%}
-        <li class="nav-item">
-            <a class="nav-link" href="/accounts/login/">LOGIN |</a>
-        </li>
-        {%endif%}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/accounts/login/"><span class="glyphicon glyphicon-user"></span> LOGIN</a></li>
+        <li><a href="accounts/register/"><span class="glyphicon glyphicon-log-in"></span> SIGNUP</a></li>
       </ul>
     </div>
-  </nav>      
+  </nav>
+
+
+

@@ -24,18 +24,7 @@ def create_profile(request):
         return redirect('profile')
     else:
         form = ProfileForm()
-    # user = request.user
-    # if request.method == "POST":
-    #     form = ProfileForm(request.POST, request.FILES)
-    #     if form.is_valid():
-            
-    #         profile =form.save(commit = False)
-    #         profile.user = user
-    #         profile.save()
-            
-    #         return redirect('profile')
-    # else:
-    #     form = ProfileForm()
+    
     return render(request, 'create-profile.html', {"form":form})
 def profile(request):
     
@@ -50,10 +39,10 @@ def home(request):
     
     comments = Comment.objects.all()
     #likes = Instalikes.objects.all
-    profiles = Profile.objects.all()
+    profile = Profile.objects.all()
    
     
-    return render(request, 'home.html', {"posts":posts, 'users':users, 'comments':comments ,'profile':profiles})
+    return render(request, 'home.html', {"posts":posts, 'users':users, 'comments':comments ,'profile':profile})
 def comment(request, image_id):
 
     current_user = request.user
@@ -86,7 +75,7 @@ def likes(request, image_id):
     return redirect('home')
 
 
-    
+@login_required(login_url='accounts/login/')    
 def new_post(request):
     current_user = request.user
     if request.method == 'POST':
