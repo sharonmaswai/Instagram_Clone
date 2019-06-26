@@ -15,9 +15,13 @@
     .comlike{
         font-size: 19px;
     }
+    footer{
+        margin-left: 150px;
+    }
     .card{
         width: 550px;
         font-family: 'EB Garamond', serif;
+        margin-left: 200px;
     }
 .footer-cont {
         -webkit-box-orient: vertical;
@@ -171,7 +175,7 @@ background-color: white;
             
                               </div>
                                 
-                         </div>
+                          </div>
                           
                           <hr>
                           <!-- Text -->
@@ -182,7 +186,7 @@ background-color: white;
                                {% endautoescape %}
                            </p>
                          
-                           </div>
+                           
                           
                             <hr> 
                           <!-- Link -->
@@ -214,9 +218,9 @@ background-color: white;
 
             </div>
             <div class="col-md-4">
-                    <div class="row">
+                          <div class="row">
                             <img src="https://instagram.fmba3-1.fna.fbcdn.net/vp/9fea5594e8cf78fc8d3985b92c1535fe/5D8B79E9/t51.2885-19/s150x150/56653096_434762827343795_6071080308919238656_n.jpg?_nc_ht=instagram.fmba3-1.fna.fbcdn.net"  height="50px" width="50px" class="rounded-circle"> <a href="{% url 'profile'%}"><p style="color:black;font-weight:bolder;text-decoration:none;"><b>{{user.username}}</b></p></a>
-                          </div><br>
+                           </div><br>
                             <div class="row">
                               <div class="card" style="width: 18rem;">
                                 <div class="card-header">
@@ -244,20 +248,38 @@ background-color: white;
                                 </ul>
                               </div>
                             </div>
-                        </div>
-                      </div>
-
             </div>
+                     
 
         </div>
            
-
+        <div class="row">
+                <footer>
+                        <div class="footer-cont">
+                            <ul>
+                             <li><a href='#'>About us</a></li>
+                             <li><a href='#'>Support</a></li>
+                             <li><a href='#'>Blog</a></li>
+                             <li><a href='#'>Press</a></li>
+                             <li><a href='#'>Jobs</a></li>
+                             <li><a href='#'>Privacy</a></li>
+                             <li><a href='#'>Terms</a></li>
+                             <li><a href='#'>Directory</a></li>
+                             <li><a href='#' onclick='return false;'>Language</a></li>
+                            </ul>
+                            <span class='copyright'>© 2019 INSTAGRAM</span>
+                            </div>
+                </footer>
+    
+    
+        </div>
+            
 
     </div>
     
     
+    
 
-   
    
 </body>
 
