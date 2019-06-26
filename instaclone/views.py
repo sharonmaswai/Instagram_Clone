@@ -48,30 +48,12 @@ def home(request):
     posts = Image.objects.all()
     users = Profile.objects.all()
     
-    for i in posts:
-        print(i.image)
-    # print(posts)
     comments = Comment.objects.all()
-    # likes = Likes.objects.all
-    profile = Profile.objects.all()
-    # if request.method == 'POST':
-    #     form = CommentForm(request.POST)
-    #     if form.is_valid():
-    #         comment = form.save(commit=False)
-    #         comment.image = image
-    #         comment.user_comment = current_user
-    #         comment.save()
-
-    #         print(comments)
-
-
-    #     return redirect(home)
-    # else:
-    #     form = CommentForm()
-
-    # print(likes)
+    #likes = Instalikes.objects.all
+    profiles = Profile.objects.all()
+   
     
-    return render(request, 'home.html', {"posts":posts, 'users':users, 'comments':comments})
+    return render(request, 'home.html', {"posts":posts, 'users':users, 'comments':comments ,'profile':profiles})
 def comment(request, image_id):
 
     current_user = request.user

@@ -134,12 +134,13 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8"> {%for post in posts%}
+            <div class="col-md-8">
+                {%for post in posts%}
                     <div class="card">
             
                         <!-- Card image -->
                         <div class="view overlay">
-                            <a href='https://goo.gl/Y9YWLo' target='_blank'><img style="border-radius: 50%; margin-top:20px; margin-left:10px; width: 40px; height: 40px;" src='https://instagram.fmba3-1.fna.fbcdn.net/vp/9fea5594e8cf78fc8d3985b92c1535fe/5D8B79E9/t51.2885-19/s150x150/56653096_434762827343795_6071080308919238656_n.jpg?_nc_ht=instagram.fmba3-1.fna.fbcdn.net'><p style="padding-left: 70px; font-size: 20px;">{{user}}</p></a>
+                            <a href='https://goo.gl/Y9YWLo' target='_blank'><img style="border-radius: 50%; margin-top:20px; margin-left:10px; width: 40px; height: 40px;" src="https://instagram.fmba3-1.fna.fbcdn.net/vp/9fea5594e8cf78fc8d3985b92c1535fe/5D8B79E9/t51.2885-19/s150x150/56653096_434762827343795_6071080308919238656_n.jpg?_nc_ht=instagram.fmba3-1.fna.fbcdn.net"><p style="padding-left: 70px; font-size: 20px;">{{user}}</p></a>
                                 
                             <a href='https://goo.gl/Y9YWLo' target='_blank' class='user'></a>
                           <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap">
@@ -147,13 +148,11 @@
                             <div class="mask rgba-white-slight"></div>
                           </a>
                         </div>
-                      
+                        
                         <!-- Card content -->
                         <div class="card-body">
                       
-                          <!-- Social shares button -->
-                        
-                          <!-- Title -->
+                          
                           <div class='card-title'>
                               <div class="react">
                                     <a href="{% url 'likes' post.id %}" role='button'><span class='love'></span></a>
